@@ -1,0 +1,16 @@
+{
+    "name": "jawad/custom-mvc",
+    "description": "custom-mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Models\\": "app/models/"
+        }   
+    },
+    "require": {
+        "symfony/routing": "^4.4",
+        "symfony/http-foundation": "^4.4",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/database": "5.2.7"
+    }
+}
