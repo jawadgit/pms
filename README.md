@@ -17,6 +17,7 @@ Sql file is placed in schema folder
 - PDO library used for database security
 - OOP based architecture created
 - Guzzle Library used for api calling
+- Column based filter integrated on Datatables
 
 
 # Improvements (if more time given)
@@ -29,6 +30,6 @@ Sql file is placed in schema folder
 # Usage
 - clone repo
 - import database
-- update database credentials in config/config.php
+- update database credentials and folder path in config/config.php
 - run command `composer install`
 - open project in browser
