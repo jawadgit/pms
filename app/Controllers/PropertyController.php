@@ -15,7 +15,7 @@ class PropertyController extends Controller
 	public function index(RouteCollection $routes)
 	{
 		$data = $this->propertyModel->getData();
-		if($data == ''){
+		if(empty($data)){
 			$this->importData();
 		}
 		$this->view('home', $data);
@@ -23,21 +23,11 @@ class PropertyController extends Controller
 
 	private function importData()
 	{
-		/*
 		set_time_limit(0);
 		$client = new \GuzzleHttp\Client();
-		//$request = $client->get('https://trial.craig.mtcserver15.com/api/properties?api_key='.API_KEY.'&page[size]='.PAGE_SIZE.'&page[number]=1');
-			//$response = $request->getBody()->getContents();	
-			//$decodedData = json_decode($response);
-			echo "<pre>";
-			//print_r($decodedData->data);
-			//print_r($decodedData->data[0]->uuid);
-			//print_r($decodedData->data[0]->property_type->title);
-			//echo "\n";
-			//$propertyTitle = $decodedData->data[0]->property_type->title;
-			//$result = $this->propertyModel->getPropertyType('Terraced');
-			//$savePropertyTypeResult = $this->propertyModel->savePropertyTpe($decodedData->data[0]->property_type);
-			//print_r($savePropertyTypeResult);
+		$request = $client->get('https://trial.craig.mtcserver15.com/api/properties?api_key='.API_KEY.'&page[size]='.PAGE_SIZE.'&page[number]=1');
+		$response = $request->getBody()->getContents();	
+		$decodedData = json_decode($response);
 
 		for($i=1; $i<=TOTAL_PAGES; $i++)
 		{
@@ -56,11 +46,7 @@ class PropertyController extends Controller
 					$savePropertyResult = $this->propertyModel->saveProperty($data, $result->id);
 				}
 			}
-			//echo "pagenumber = ".$i;
-			//echo "\n";
-			//print_r($decodedData);
-			//echo "\n";
 		}
-		*/
+		return true;
 	}
 }
